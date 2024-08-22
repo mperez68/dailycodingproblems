@@ -1,23 +1,47 @@
 package MaxHeapPermutationsProblem;
 
+import main.AbstractProblem;
+
+import java.util.Random;
+
 public class MaxHeapPermutationsProblem extends AbstractProblem {
+    public static void main(String[] args) {
+        MaxHeapPermutationsProblem p = new MaxHeapPermutationsProblem();
+        initRandomInput(p, true);
+        System.out.println(p.Solve());
+    }
 
-    @Override
-    public void naiveSolution() {
+    private static void initRandomInput(MaxHeapPermutationsProblem p, boolean b) {
+        if (!b) return;
+        int size = 1000;
+        p.n = new int[size];
+        Random rand = new Random();
+        for (int i = 0; i < size; i++) {
+            p.n[i] = rand.nextInt(100);
+        }
+    }
+
+    public int[] n = {3, 4, 7, 25};
+
+    public String naiveSolution() {
         HeapCalculator h = new HeapCalculator();
-
-        int[] n = {3, 4, 7, 10, 25, 99};
+        StringBuilder solutions = new StringBuilder();
 
         for (int size : n) {
             int[] list = new int[size];
             for (int i = 0; i < size; i++) {
                 list[i] = i + 1;
             }
-            System.out.println("given " + size + ", => " + h.solution(list));
+            solutions.append(h.solution(list));
         }
+        return solutions.toString();
     }
 
-    @Override
-    public void GivenSolution() {
+    public String GivenSolution() {
+        StringBuilder solutions = new StringBuilder();
+        for (int size : n) {
+            solutions.append(GFG.solve(size));
+        }
+        return solutions.toString();
     }
 }
