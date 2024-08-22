@@ -1,5 +1,78 @@
 package MaxHeapPermutationsProblem;
 
+/**
+ * NOTES
+ * <p>
+ * given n values, the highest value always has to be root, so we are permutating n - 1 values.
+ * <p>
+ * n = size
+ * l = left sub-tree
+ * r = right sub-tree
+ * <p>
+ * l + r = n - 1
+ * <p>
+ * (n-1) / l permutations exist
+ * <p>
+ * T(n) = ((n-1) / l) * T(L) * T(R)
+ * <p>
+ * h = log2 n = height of the heap
+ * m = 2^h = maximum number of elements present in last level of heap
+ * p = n - (2^h - 1) = actual elements present in last level
+ * <p>
+ * 2 cases exist:
+ * <p>
+ * l = 2^h - 1 			IF p >= m/2
+ * <p>
+ * l = 2^h - 1 - ((m/2) - p) 	IF p < m/2
+ * <p>
+ * thus,
+ * <p>
+ * r = n - l - 1
+ * <p>
+ *
+ * GIVEN n = 3,
+ * <p>
+ * l + r = n - 1
+ * <p>
+ * l + r = 3 - 1
+ * <p>
+ * l + r = 2
+ * <p>
+ * p ?>= m/2
+ * <p>
+ * p = 3 - (2^(log2 3) - 1)
+ * <p>
+ * p = 3 - (3 - 1)
+ * <p>
+ * p = 1
+ * <p>
+ * m = 2^h
+ * <p>
+ * m = 2^(log2 3)
+ * <p>
+ * m = 3
+ * <p>
+ * 1 < 3 / 2 = 1.5
+ * <p>
+ * so,
+ * <p>
+ * l = 2^h - 1 - ((m/2) - p)
+ * <p>
+ * l = 2^(log2 3) - 1 - ((3/2) - 1)
+ * <p>
+ * l = 3 - 1 - (1.5 - 1)
+ * <p>
+ * l = 1.5
+ * <p>
+ * r = 3 - l - 0
+ * <p>
+ * r = 2
+ * <p>
+ * T(n) = ((n-1) / ;) * T(L) * T(R)
+ * <p>
+ * T(3) = ((3-1) / 1.5) * 1.5 * 1.5 = 3
+ */
+
 // Java program to count max heaps with n distinct keys
 
 class GFG
