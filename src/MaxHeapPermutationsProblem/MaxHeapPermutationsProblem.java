@@ -7,12 +7,11 @@ import java.util.Random;
 public class MaxHeapPermutationsProblem extends AbstractProblem {
     public static void main(String[] args) {
         MaxHeapPermutationsProblem p = new MaxHeapPermutationsProblem();
-        initRandomInput(p, true);
+        initRandomInput(p);
         System.out.println(p.Solve());
     }
 
-    private static void initRandomInput(MaxHeapPermutationsProblem p, boolean b) {
-        if (!b) return;
+    private static void initRandomInput(MaxHeapPermutationsProblem p) {
         int size = 1000;
         p.n = new int[size];
         Random rand = new Random();

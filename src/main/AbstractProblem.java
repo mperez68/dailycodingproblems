@@ -1,7 +1,6 @@
 package main;
 
 import java.util.HashMap;
-import java.util.Objects;
 
 public abstract class AbstractProblem {
     public String Solve() {

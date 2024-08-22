@@ -1,8 +1,6 @@
 package MaxHeapPermutationsProblem;
 
 // Java program to count max heaps with n distinct keys
-import java.util.*;
-import java.io.*;
 
 class GFG
 {
