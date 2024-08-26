@@ -18,9 +18,9 @@ public abstract class AbstractProblem {
         }
 
         HashMap<String, Long> output = new HashMap<>();
-        long correct = 1;
+        long correct = 0;
         if (nSol.equals(gSol)) {
-            correct = 0;
+            correct = 1;
         }
         output.put("Correct?", correct);
         output.put("Given Time", given - naive);
