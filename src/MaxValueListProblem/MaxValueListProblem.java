@@ -11,7 +11,7 @@ public class MaxValueListProblem extends AbstractProblem {
     public static void main(String[] args) {
         MaxValueListProblem p = new MaxValueListProblem();
         initRandomInput(p);
-        System.out.println(p.Solve());
+        System.out.println(p.solve());
     }
 
     public static void initRandomInput(MaxValueListProblem p) {

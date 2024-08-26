@@ -8,7 +8,7 @@ public class MaxHeapPermutationsProblem extends AbstractProblem {
     public static void main(String[] args) {
         MaxHeapPermutationsProblem p = new MaxHeapPermutationsProblem();
         initRandomInput(p);
-        System.out.println(p.Solve());
+        System.out.println(p.solve());
     }
 
     private static void initRandomInput(MaxHeapPermutationsProblem p) {
