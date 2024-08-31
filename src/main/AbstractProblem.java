@@ -1,6 +1,7 @@
 package main;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public abstract class AbstractProblem {
 
@@ -14,12 +15,16 @@ public abstract class AbstractProblem {
         long given = System.currentTimeMillis();
 
         if (printSol) {
-            System.out.println(nSol + " " + gSol);
+            String n = nSol;
+            String g = gSol;
+            if (n == null) n = "null";
+            if (g == null) g = "null";
+            System.out.println(n + " " + g);
         }
 
         HashMap<String, Long> output = new HashMap<>();
         long correct = 0;
-        if (nSol.equals(gSol)) {
+        if (Objects.equals(nSol, gSol)) {
             correct = 1;
         }
         output.put("Correct?", correct);
