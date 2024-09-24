@@ -12,7 +12,6 @@ import main.AbstractProblem;
 public class PermutationCounterProblem extends AbstractProblem {
     public static void main(String[] args) {
         PermutationCounterProblem p = new PermutationCounterProblem();
-        printSol = true;
         System.out.println(p.solve());
     }
 
